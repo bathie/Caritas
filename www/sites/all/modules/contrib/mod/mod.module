@@ -1,0 +1,298 @@
+<?php
+
+/*function mod_menu() {
+  $items['banta'] = array(
+   'title' => 'INTRODUCTION',
+   'page callback' => 'mod_hello',
+   'title callback' => 'mod_title',
+   'access callback' => 'user_access',
+   'access arguments' => array('receive greeting'),
+   'type' => MENU_NORMAL_ITEM,
+);
+	
+
+$items['banta/voirbanta'] = array(
+   'title' => 'A propos',
+   'page callback' => 'mod_voirbanta',
+   'access callback' => 'user_access',
+   'access arguments' => array('receive greeting'),
+   'type' => MENU_NORMAL_ITEM,
+);
+
+
+$items ['banta/formulaire'] = array(
+      'title' => 'mon premier formulaire',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array ('mod_form'),
+      'access callback' => 'user_access',
+      'access arguments' => array ('receive greeting'),
+      'type' => MENU_NORMAL_ITEM,
+);
+
+return $items;
+
+}
+
+
+function mod_permission() {
+return array(
+  'receive greeting' => array(
+  'title' => t('Receive a greeting'),
+  'description' => t('donner aux utilisateurs la permission'),
+   ),
+);
+}
+
+
+
+
+function mod_hello($user = '') {
+return t('Hello! @user', 
+      array('@user' => $user
+));
+}*/
+
+function mod_title() {
+$now = format_date(time());
+return t('Nous sommes le @time' , array('@time' => $now));
+}
+
+
+/*function mod_voirbanta() {
+return t('Bienvenue chez Bantalabs');
+}*/
+
+
+
+function mod_block_info() {
+$block['user'] = array(
+	'info' => 'le bloc du user',
+);
+return $block;
+}
+
+function mod_block_view($delta = ''){
+	$block['subject'] = mod_user_subject();
+	$block['content'] = mod_block_content($delta);
+
+	return $block;
+}
+
+
+function mod_block_content ($swicth_block) {
+	if(user_is_logged_in()) {
+	 global $user;
+	  $items = array();
+           $name = $user->name;
+		$items[] = l(t('Editer votre profile'), 'user', array('attributes' => array('title' => t('Modifier votre profil'))));
+                $items[] = l(t('Deconnexion...'), 'user/logout', array('attributes' => array('title' => t('Deconnexion'))));
+            $output = '<div class="msg">' . t('BIENVENUE') . '</div>';
+		$output .= theme('item_list', array('items' => $items));
+        return $output;
+      }
+	} 
+
+
+
+
+function mod_user_subject() {
+if(user_is_logged_in()) {
+    global $user;
+    $name = $user->name;
+    return t('Hello') . ' ' . $name;
+  }
+}
+
+
+
+
+
+/*function mod_block_info() {
+
+$blocks['DATE'] = array( 
+	'info'  => 'la date du jour',
+);
+return $blocks;
+}
+
+function mod_block_view($delta = '') {
+
+      $block['subject'] = t('DATE');
+      $block['content'] = mod_block_contents($delta);
+return $block;
+
+}
+
+
+function mod_block_contents($switch_block) {
+return array('#markup' => variable_get('block_example_string',  t('la date du jour est: %time', array('%time' => date('l, F d, Y')))));
+}
+
+
+
+
+
+
+
+function mod_block_info() {
+
+$blocks['hello_bloc'] = array( 
+'info'       => 'hello word',
+);
+return $blocks;
+}
+
+function mod_block_view($delta = '') {
+$block = array(
+'subject' => 'Mon premier bloc :',
+'content' => 'Hello World !!!'
+);
+return $block;
+}
+*/
+
+
+
+
+
+
+
+
+
+/*
+Implementation of hook_help()
+
+function mod_hello_help($path, $arg) {
+switch ($path) {
+case 'admin/help#hello':
+return '<p>' . t('Sample module from Atelier Drupal book. This module
+just provide a hello world block.') . '</p>';
+}
+}
+
+
+
+/*function mod_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL) {
+ die('in nodeapi hook');
+ $node->content ['mod'] = array(
+  //'#markup'  => theme ( 'mod' , array('mod' => $node->mod)),
+  '#markup' => 'HELLO',
+  '#weight' => 10,
+);
+
+
+
+
+function mod_node_view($node, $build_mode = 'full') {
+// die('in node view hook');
+$node->content ['test'] = array(
+  '#markup' => 'hello word',
+  '#weight' => 10,
+);
+return $node;
+}
+
+function mod_node_install() {
+db_insert('node_access')
+    ->fields(array(
+    'nid' => 0, 
+    'gid' => 0, 
+    'realm' => 'all', 
+    'grant_view' => 1, 
+    'grant_update' => 0, 
+    'grant_delete' => 0,
+  ))
+    ->execute();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mod_install() {}
+/*function mod_node_view($node, $build_mode = 'full'){
+$node->content ['test'] = array(
+  '#markup' => theme('test' , array('test' => $node->test)),
+  '#weight' => 10,
+);
+return $node;
+}
+
+function mod_theme() {
+return array(
+'test' => array(
+'arguments' => array ('hello')),
+);
+}
+*/
+
+
+
+
+
+
+/*function mod_form () {
+
+  $form['intro'] = array(
+    '#markup' => t('un petit formulaire de test'),
+  );
+
+  $form['nom'] = array(
+    '#type' => 'textfield', 
+    '#title' => t('nom'),
+    '#required' => TRUE, 
+    '#description' => t('Entrez votre nom'),
+  );
+
+ $form['prenom'] = array(
+    '#type' => 'textfield', 
+    '#title' => t('prenom'),
+    '#required' => TRUE, 
+    '#description' => t('Entrez votre prenom'),
+  );
+
+
+ $form['sexe'] = array(
+    '#type' => 'select', 
+    '#title' => t('sexe'), 
+    '#options' => array(
+      'Masculin' => 'Option Masculin', 
+      'Feminin' => 'Option Feminin', 
+    ), 
+    '#description' => t('Choose an option.'),
+  );
+
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+  return $form;
+}
+
+
+function mod_form_validate($form, &$form_state) {
+   if($form_state['values']['nom'] == 'bathie'){
+    return form_set_error('nom', "Désolé, bathie, vous n'êtes pas autorisé à vous inscrire sur le site");
+  }
+}
+
+function mod_form_submit($form, &$form_state){
+     $nom = $form_state ['values']['nom'];
+     $prenom = $form_state ['values']['prenom'];
+     $sexe = $form_state ['values']['sexe'];
+
+     drupal_set_message(t('merci, %prenom %nom!! Vous etes de sexe %sexe ',array('%prenom' => $prenom, '%nom' => $nom, '%sexe' => $sexe)));
+}
+
+*/
