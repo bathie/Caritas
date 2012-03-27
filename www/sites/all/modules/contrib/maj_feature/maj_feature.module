@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the maj_feature feature.
- */
-
-include_once('maj_feature.features.inc');
