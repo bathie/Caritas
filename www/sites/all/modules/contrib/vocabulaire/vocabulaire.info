@@ -1,0 +1,7 @@
+name = "vocabulaire"
+description = "ajout de vocabulaire"
+core = "7.x"
+package = "Features"
+dependencies[] = "features"
+dependencies[] = "taxonomy"
+features[taxonomy][] = "actualites"
