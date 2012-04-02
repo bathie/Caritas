@@ -1,8 +1,0 @@
-name = "carte_views"
-description = "la carte de caritas"
-core = "7.x"
-package = "Features"
-dependencies[] = "ctools"
-dependencies[] = "views"
-features[ctools][] = "views:views_default:3.0"
-features[views_view][] = "slideshow_test"

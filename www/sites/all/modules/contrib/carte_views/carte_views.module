@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the carte_views feature.
- */
-
-include_once('carte_views.features.inc');

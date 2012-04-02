@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the mes_views feature.
- */
-
-include_once('mes_views.features.inc');
