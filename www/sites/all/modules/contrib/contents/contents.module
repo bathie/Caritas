@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the contents feature.
- */
-
-include_once('contents.features.inc');
