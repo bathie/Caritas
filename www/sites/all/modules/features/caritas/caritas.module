@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the caritas feature.
+ */
+
+include_once('caritas.features.inc');
