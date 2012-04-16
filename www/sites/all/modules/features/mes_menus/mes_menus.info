@@ -1,0 +1,8 @@
+name = "mes_menus"
+description = "menu"
+core = "7.x"
+package = "Features"
+dependencies[] = "features"
+dependencies[] = "menu"
+features[menu_custom][] = "main-menu"
+features[menu_links][] = "main-menu:programmes"
