@@ -112,9 +112,7 @@ function mod_block_content ($swicth_block) {
     case 'bienvenue':
       $path =  'public://logo.png'; 
      $output = theme('image_style', array( 'path' => $path, 'style_name' => 'thumbnail'));
-      $output1 = '<div class="msg">' . t('BIENVENUE') . '</div>';
         return $output;
-        return $output1;
           break;
     } 
  }

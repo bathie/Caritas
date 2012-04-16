@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the contenu_image feature.
+ */
+
+include_once('contenu_image.features.inc');

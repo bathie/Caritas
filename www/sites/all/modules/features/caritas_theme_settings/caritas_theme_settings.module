@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Caritas_theme_settings feature.
+ */
+
+include_once('caritas_theme_settings.features.inc');
