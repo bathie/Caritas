@@ -52,10 +52,95 @@ return t('Hello! @user',
 ));
 }*/
 
-function mod_title() {
-$now = format_date(time());
-return t('Nous sommes le @time' , array('@time' => $now));
+
+function mod_block_info() {
+    $block['user'] = array(
+      'info' => t('le bloc du user'),
+    );
+    $block['bienvenue'] = array(
+      'info' => t('le bloc message de leveque'),
+    );
+    $block['date'] = array(
+      'info' => t('La date du jour'),
+    );
+    return $block;
+  }
+
+
+/**
+     * Implements hook_block_view().
+     */
+
+
+function mod_block_view($delta = ''){
+  //The $delta parameter tells us which block is being requested.
+  switch ($delta) {
+    case 'user':
+       $block['subject'] = mod_user_subject();
+       $block['content'] = mod_block_content($delta);
+       break;
+    case 'bienvenue':
+      $block['subject'] = 'BIENVENUE';
+      $block['content'] = mod_block_content($delta);
+      break;
+    case 'date':
+      $block['subject'] = '<none>';
+      $block['content'] = mod_block_content($delta);
+      break;
 }
+  return $block;
+}
+
+
+function mod_block_content ($swicth_block) {
+  switch ($swicth_block) {
+    case 'user':
+      if(user_is_logged_in()) {
+         global $user;
+           $items = array();
+             $name = $user->name;
+           $items[] = l(t('Editer votre profile'), 'user', array('attributes' => array('title' => t('Modifier votre profil'))));
+                $items[] = l(t('Deconnexion...'), 'user/logout', array('attributes' => array('title' => t('Deconnexion'))));
+            $output = '<div class="msg">' . t('BIENVENUE') . '</div>';
+            $output .= theme('item_list', array('items' => $items));
+        return $output;
+      }
+          break;
+    case 'date':
+        return date('l, F d, Y');
+          break;
+    case 'bienvenue':
+      $path =  'public://logo.png'; 
+     $output = theme('image_style', array( 'path' => $path, 'style_name' => 'thumbnail'));
+      $output1 = '<div class="msg">' . t('BIENVENUE') . '</div>';
+        return $output;
+        return $output1;
+          break;
+    } 
+ }
+
+function mod_user_subject() {
+if(user_is_logged_in()) {
+    global $user;
+    $name = $user->name;
+    return t('Hello') . ' ' . $name;
+  }
+}
+
+
+
+
+   
+     
+
+
+
+
+
+
+
+
+
 
 
 /*function mod_voirbanta() {
@@ -64,7 +149,7 @@ return t('Bienvenue chez Bantalabs');
 
 
 
-function mod_block_info() {
+/*function mod_block_info() {
 $block['user'] = array(
 	'info' => 'le bloc du user',
 );
@@ -103,7 +188,7 @@ if(user_is_logged_in()) {
   }
 }
 
-
+*/
 
 
 

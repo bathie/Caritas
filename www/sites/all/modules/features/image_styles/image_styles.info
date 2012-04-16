@@ -1,0 +1,7 @@
+name = "image_styles"
+description = "nouveaux styles d'images"
+core = "7.x"
+package = "Features"
+dependencies[] = "image"
+features[image][] = "bloc_photo"
+features[image][] = "img_programme"
