@@ -80,7 +80,7 @@ function mod_block_view($delta = ''){
        $block['content'] = mod_block_content($delta);
        break;
     case 'bienvenue':
-      $block['subject'] = 'BIENVENUE';
+      $block['subject'] = '<none>';
       $block['content'] = mod_block_content($delta);
       break;
     case 'date':
@@ -110,12 +110,24 @@ function mod_block_content ($swicth_block) {
         return date('l, F d, Y');
           break;
     case 'bienvenue':
-      $path =  'public://logo.png'; 
-     $output = theme('image_style', array( 'path' => $path, 'style_name' => 'thumbnail'));
+      //$path =  'public://eveque.jpg'; 
+
+ $variables = array(
+      'path' => 'sites/all/themes/zeropoint/images/eveque.jpg', 
+      'alt' => 'Test alt',
+      'title' => 'Evêque',
+      'attributes' => array('class' => 'some-img', 'id' => 'my-img'),
+      );
+  $outputy = theme('image', $variables);
+  $outputx = '<div class="msg">' . t('Souhaits de bienvenue Mgr. Jean-Pierre BASSENE, Evêque de Kolda, Responsable de la commission de Pastorale Sociale au sein de la Conférence Episcopale, Abbé Ambroise Tine, Secrétaire Général de Caritas Sénégal et toute la CARITAS SENEGAL vous souhaitent la bienvenue sur le site et une bonne visite') . '</div>';
+    // $outputy = theme('image_style', array( 'path' => $path, 'style_name' => 'bloc_photo'));
+  $output = $outputy."".$outputx;
         return $output;
           break;
     } 
  }
+
+
 
 function mod_user_subject() {
 if(user_is_logged_in()) {
@@ -125,11 +137,25 @@ if(user_is_logged_in()) {
   }
 }
 
-
-
-
-   
-     
+function mod_image_default_styles() {
+  $styles = array();
+ 
+  $styles['mod_new_style'] = array(
+    'effects' => array(
+      array(
+        'name' => 'image_scale',
+        'data' => array('width' => 468, 'height' => '', 'upscale' => FALSE),
+        'weight' => 0,
+      ),
+//                      array(
+//        'name' => 'image_crop',
+//        'data' => array('width' => 460, 'height' => 280, 'anchor' => 'center-bottom'),
+//        'weight' => 1,
+//      ),
+    )
+  );
+  return $styles;
+}
 
 
 
@@ -147,69 +173,6 @@ return t('Bienvenue chez Bantalabs');
 
 
 
-/*function mod_block_info() {
-$block['user'] = array(
-	'info' => 'le bloc du user',
-);
-return $block;
-}
-
-function mod_block_view($delta = ''){
-	$block['subject'] = mod_user_subject();
-	$block['content'] = mod_block_content($delta);
-
-	return $block;
-}
-
-
-function mod_block_content ($swicth_block) {
-	if(user_is_logged_in()) {
-	 global $user;
-	  $items = array();
-           $name = $user->name;
-		$items[] = l(t('Editer votre profile'), 'user', array('attributes' => array('title' => t('Modifier votre profil'))));
-                $items[] = l(t('Deconnexion...'), 'user/logout', array('attributes' => array('title' => t('Deconnexion'))));
-            $output = '<div class="msg">' . t('BIENVENUE') . '</div>';
-		$output .= theme('item_list', array('items' => $items));
-        return $output;
-      }
-	} 
-
-
-
-
-function mod_user_subject() {
-if(user_is_logged_in()) {
-    global $user;
-    $name = $user->name;
-    return t('Hello') . ' ' . $name;
-  }
-}
-
-*/
-
-
-
-/*function mod_block_info() {
-
-$blocks['DATE'] = array( 
-	'info'  => 'la date du jour',
-);
-return $blocks;
-}
-
-function mod_block_view($delta = '') {
-
-      $block['subject'] = t('DATE');
-      $block['content'] = mod_block_contents($delta);
-return $block;
-
-}
-
-
-function mod_block_contents($switch_block) {
-return array('#markup' => variable_get('block_example_string',  t('la date du jour est: %time', array('%time' => date('l, F d, Y')))));
-}
 
 
 
@@ -217,23 +180,11 @@ return array('#markup' => variable_get('block_example_string',  t('la date du jo
 
 
 
-function mod_block_info() {
 
-$blocks['hello_bloc'] = array( 
-'info'       => 'hello word',
-);
-return $blocks;
-}
 
-function mod_block_view($delta = '') {
-$block = array(
-'subject' => 'Mon premier bloc :',
-'content' => 'Hello World !!!'
-);
-return $block;
-}
-*/
 
+
+ 
 
 
 
