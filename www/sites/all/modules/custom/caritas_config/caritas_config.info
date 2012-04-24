@@ -1,0 +1,12 @@
+name = caritas_module
+description = module de configuration de caritas
+package = caritas
+core = 7.x
+files[] = caritas_config.module
+
+; Information added by drupal.org packaging script on 2011-12-05
+version = "7.10"
+project = "caritas_config"
+
+
+

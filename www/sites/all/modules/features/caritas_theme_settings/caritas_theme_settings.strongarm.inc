@@ -25,7 +25,7 @@ function caritas_theme_settings_strongarm() {
     'toggle_main_menu' => 1,
     'toggle_secondary_menu' => 1,
     'default_logo' => 0,
-    'logo_path' => 'public://nouveau.png',
+    'logo_path' => 'public://entete.png',
     'default_favicon' => 0,
     'favicon_path' => 'public://ico.png',
     'favicon_upload' => '',
