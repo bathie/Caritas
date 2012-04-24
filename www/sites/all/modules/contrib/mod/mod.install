@@ -1,0 +1,23 @@
+<?php
+
+
+/*
+ * Disables bbcode and some other modules
+ */
+
+
+
+function mod_update_7120() {
+  module_disable(
+    array(
+      'bbcode',
+      'bueditor', 
+    ),
+    TRUE
+  );
+  cache_clear_all();
+  cache_clear_all();
+}
+
+
+

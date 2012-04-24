@@ -18,3 +18,20 @@ function caritas_config_update_7120() {
   cache_clear_all();
   cache_clear_all();
 }
+
+
+/*
+ * Disables caritas_partenaires 
+ * and some other modules
+ */
+
+
+function caritas_config_update_7050() {
+  module_enable(
+    array(
+      'caritas_partenaires', 
+    ),
+    TRUE
+  );
+}
+
