@@ -154,6 +154,144 @@ function mes_vues_views_default_views() {
   $export['bloc_entete'] = $view;
 
   $view = new view;
+  $view->name = 'gallerie_photos';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Gallerie_Photos';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Gallerie_Photos';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Champ: Contenu: Titre */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Champ: Contenu: description */
+  $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
+  $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_description']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_description']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_description']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_description']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_description']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_description']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_description']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_description']['type'] = 'text_plain';
+  $handler->display->display_options['fields']['field_description']['field_api_classes'] = 0;
+  /* Champ: Contenu: photos */
+  $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
+  $handler->display->display_options['fields']['field_photo']['table'] = 'field_data_field_photo';
+  $handler->display->display_options['fields']['field_photo']['field'] = 'field_photo';
+  $handler->display->display_options['fields']['field_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_photo']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['trim_whitespace'] = 1;
+  $handler->display->display_options['fields']['field_photo']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_photo']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_photo']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_photo']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_photo']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_photo']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_photo']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_photo']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_photo']['settings'] = array(
+    'image_style' => 'bloc_photo',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_photo']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_photo']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_photo']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_photo']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_photo']['delta_first_last'] = 0;
+  $handler->display->display_options['fields']['field_photo']['separator'] = '';
+  $handler->display->display_options['fields']['field_photo']['field_api_classes'] = 0;
+  /* Sort criterion: Contenu: Titre */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['order'] = 'DESC';
+  /* Filter criterion: Contenu: Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Contenu: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'album' => 'album',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'gallerie-photos';
+  $translatables['gallerie_photos'] = array(
+    t('Master'),
+    t('Gallerie_Photos'),
+    t('more'),
+    t('Apply'),
+    t('Réinitialiser'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('Page'),
+  );
+  $export['gallerie_photos'] = $view;
+
+  $view = new view;
   $view->name = 'image_article';
   $view->description = '';
   $view->tag = 'default';
@@ -439,6 +577,126 @@ function mes_vues_views_default_views() {
     t('Block'),
   );
   $export['image_diaconie_handicaps'] = $view;
+
+  $view = new view;
+  $view->name = 'mes_faq';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'mes_faq';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Foires Aux Questions';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Réinitialiser';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = 0;
+  $handler->display->display_options['row_options']['default_field_elements'] = 1;
+  /* Champ: Contenu: Titre */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['title']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Champ: Contenu: Reponse */
+  $handler->display->display_options['fields']['field_reponse']['id'] = 'field_reponse';
+  $handler->display->display_options['fields']['field_reponse']['table'] = 'field_data_field_reponse';
+  $handler->display->display_options['fields']['field_reponse']['field'] = 'field_reponse';
+  $handler->display->display_options['fields']['field_reponse']['label'] = '';
+  $handler->display->display_options['fields']['field_reponse']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_reponse']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_reponse']['alter']['more_link'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_reponse']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_reponse']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_reponse']['hide_alter_empty'] = 1;
+  $handler->display->display_options['fields']['field_reponse']['field_api_classes'] = 0;
+  /* Filter criterion: Contenu: Publié */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Contenu: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'foires_aux_questions' => 'foires_aux_questions',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'mes-faq';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $translatables['mes_faq'] = array(
+    t('Master'),
+    t('Foires Aux Questions'),
+    t('more'),
+    t('Apply'),
+    t('Réinitialiser'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('Page'),
+    t('Block'),
+  );
+  $export['mes_faq'] = $view;
 
   $view = new view;
   $view->name = 'partenariats';
