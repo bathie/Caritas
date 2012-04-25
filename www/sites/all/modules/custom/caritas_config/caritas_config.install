@@ -29,7 +29,8 @@ function caritas_config_update_7120() {
 function caritas_config_update_7050() {
   module_enable(
     array(
-      'caritas_partenaires', 
+      'caritas_partenaires',
+      'cartitas_zp', 
     ),
     TRUE
   );
