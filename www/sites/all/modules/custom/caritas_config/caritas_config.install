@@ -26,13 +26,15 @@ function caritas_config_update_7120() {
  */
 
 
-function caritas_config_update_7060() {
+function caritas_config_update_7130() {
   module_enable(
     array(
-      'caritas_partenaires',
+      
       'caritas_zp', 
     ),
     TRUE
   );
+   cache_clear_all();
+   cache_clear_all();
 }
 
