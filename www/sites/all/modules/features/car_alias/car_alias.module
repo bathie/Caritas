@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Car_alias feature.
+ */
+
+include_once('car_alias.features.inc');

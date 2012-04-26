@@ -274,7 +274,7 @@ function mes_vues_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'gallerie-photos';
+  $handler->display->display_options['path'] = 'gallerie';
   $translatables['gallerie_photos'] = array(
     t('Master'),
     t('Gallerie_Photos'),
