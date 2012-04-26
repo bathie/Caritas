@@ -38,3 +38,17 @@ function caritas_config_update_7150() {
    cache_clear_all();
 }
 
+
+/**
+ * Disable all blocks in zeropoint theme
+ */
+
+function caritas_config_update_7170() {
+$result= db_update('block') 
+  ->fields(array(
+    'status' => 0,
+  ))
+  ->condition('theme','zeropoint')
+  ->execute();
+
+}
