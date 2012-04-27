@@ -61,16 +61,16 @@ function caritas_config_block_content ($swicth_block) {
       //$path =  'public://eveque.jpg'; 
 
  $variables = array(
-      'path' => 'sites/all/themes/zeropoint/images/eveque.jpg', 
-      'alt' => 'Test alt',
+      'path' => 'sites/all/themes/zeropoint/images/eveque.png', 
+      'alt' => 'image de leveque',
       'title' => 'Evêque',
-      'attributes' => array('class' => 'some-img', 'id' => 'my-img'),
+      'attributes' => array('class' => 'caritas-img', 'id' => 'eveque-img'),
       );
   $outputy = theme('image', $variables);
-  $outputx = '<div class="msg">' . t('Souhaits de bienvenue Mgr. Jean-Pierre BASSENE, Evêque de Kolda, Responsable de la commission de Pastorale Sociale au sein de la Conférence Episcopale, Abbé Ambroise Tine, Secrétaire Général de Caritas Sénégal et toute la CARITAS SENEGAL vous souhaitent la bienvenue sur le site et une bonne visite') . '</div>';
+  $outputx = '<div class="msg">' . t($outputy.'Souhaits de bienvenue Mgr. Jean-Pierre BASSENE, Evêque de Kolda, Responsable de la commission de Pastorale Sociale au sein de la Conférence Episcopale, Abbé Ambroise Tine, Secrétaire Général de Caritas Sénégal et toute la CARITAS SENEGAL vous souhaitent la bienvenue sur le site et une bonne visite') . '</div>';
     // $outputy = theme('image_style', array( 'path' => $path, 'style_name' => 'bloc_photo'));
-  $output = $outputy."".$outputx;
-        return $output;
+  //$output = $outputy."".$outputx;
+        return $outputx;
           break;
     } 
  }
