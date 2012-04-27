@@ -48,8 +48,4 @@ settings[search_info_upload] = 1
 
 
 
-scripts[] = /js/jquery.hoverIntent.minified.js
-scripts[] = /js/dropdown.js
-
-
 
